@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class GremistasServiceService {
 
   constructor(private http: HttpClient) { }
 
-  private aptUrl = 'http://localhost:3000/gremistas'
+  private aptUrl = `${environment.apiUrl}/gremistas`
 
   getGremista(){return this.http.get(this.aptUrl)}
 

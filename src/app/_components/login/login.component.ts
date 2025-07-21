@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent {
   onSubmit() {
     this.errorMessage = ''
 
-    this.http.post('http://localhost:3000/login', { email: this.email })
+    this.http.post(`${environment.apiUrl}/login`, { email: this.email })
       .subscribe(
         (response: any) => {
           if (response.success) {

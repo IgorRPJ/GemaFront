@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { environment } from '../environments/environment.prod';
 
 interface NoticiaResponse {
   success: boolean
@@ -19,7 +20,7 @@ interface NoticiaResponse {
 })
 export class DataService {
 
-  private apiUrl = 'http://localhost:3000/noticias'
+  private apiUrl = `${environment.apiUrl}/noticias`
   private noticiasSubject = new BehaviorSubject<any[]>([])
   noticias$ = this.noticiasSubject.asObservable()
 
@@ -36,7 +37,7 @@ export class DataService {
   }
 
   getNoticiasFromServer(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:3000/noticias').pipe(
+    return this.http.get<any[]>(`${environment.apiUrl}/noticias`).pipe(
       tap(noticias => {
         console.log('Notícias recebidas do servidor:', noticias)
       })
@@ -44,7 +45,7 @@ export class DataService {
   }
 
   criarNoticia(novaNoticia: any): Observable<NoticiaResponse> {
-    return this.http.post<NoticiaResponse>('http://localhost:3000/noticias', novaNoticia)
+    return this.http.post<NoticiaResponse>(`${environment.apiUrl}/noticias`, novaNoticia)
   }
 
   criarNoticiaComImagem(noticia: any, arquivo: File): Observable<any> {

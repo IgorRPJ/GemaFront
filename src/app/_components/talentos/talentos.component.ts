@@ -15,25 +15,25 @@ export class TalentosComponent {
     { usuarioNome: 'Gio',       img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Estéfany',  img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Mateus',    img: 'https://placehold.co/600x400'},
-    { usuarioNome: 'Alan',      img: 'https://placehold.co/600x400'},
+
     { usuarioNome: 'Igor',      img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Gustavo',   img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Gio',       img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Estéfany',  img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Mateus',    img: 'https://placehold.co/600x400'},
-    { usuarioNome: 'Alan',      img: 'https://placehold.co/600x400'},
+
     { usuarioNome: 'Igor',      img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Gustavo',   img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Gio',       img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Estéfany',  img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Mateus',    img: 'https://placehold.co/600x400'},
-    { usuarioNome: 'Alan',      img: 'https://placehold.co/600x400'},
+
     { usuarioNome: 'Igor',      img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Gustavo',   img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Gio',       img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Estéfany',  img: 'https://placehold.co/600x400'},
     { usuarioNome: 'Mateus',    img: 'https://placehold.co/600x400'},
-    { usuarioNome: 'Alan',      img: 'https://placehold.co/600x400'},
+    
   ]
 
   constructor(private location: Location) {}

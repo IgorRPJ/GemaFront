@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { BehaviorSubject, Observable } from 'rxjs'
+import { environment } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:3000'
+  private apiUrl = `${environment.apiUrl}`
   user = new BehaviorSubject<any>(null)
 
   constructor(private http: HttpClient) {}
@@ -25,11 +26,11 @@ export class AuthService {
   
 
   getProfile(): Observable<any> {
-    return this.http.get<any>(`http://localhost:3000/profile`, { withCredentials: true })
+    return this.http.get<any>(`${environment.apiUrl}/profile`, { withCredentials: true })
   }
 
   logout() {
-    return this.http.get<any>('http://localhost:3000/logout', { withCredentials: true })
+    return this.http.get<any>(`${environment.apiUrl}/logout`, { withCredentials: true })
   }
 
   isAuthenticated(): boolean {

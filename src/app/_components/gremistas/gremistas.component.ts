@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { GremistasServiceService } from '../../gremistas-service.service';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-gremistas',
@@ -15,7 +16,7 @@ export class GremistasComponent implements OnInit {
   foto!: File
   successMessage: string = ''
   errorMessage: string = ''
-  API_URL = 'http://localhost:3000'
+  API_URL = `${environment.apiUrl}`
   @ViewChild('fileInput') fileInput!: ElementRef
 
 

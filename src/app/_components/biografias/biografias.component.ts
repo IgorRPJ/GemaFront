@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-biografias',
@@ -19,12 +20,12 @@ export class BiografiasComponent implements OnInit {
   }
 
   carregar() {
-    this.http.get<any[]>('http://localhost:3000/api/biografias')
+    this.http.get<any[]>(`${environment.apiUrl}/api/biografias`)
       .subscribe(data => this.biografias = data);
   }
 
   criarBiografia() {
-    this.http.post('http://localhost:3000/api/biografias', this.nova)
+    this.http.post(`${environment.apiUrl}/api/biografias`, this.nova)
       .subscribe(() => {
         this.nova = { nome: '', biografia: '', foto_url: '' };
         this.carregar();
@@ -32,7 +33,7 @@ export class BiografiasComponent implements OnInit {
   }
 
   deletar(id: number) {
-    this.http.delete(`http://localhost:3000/api/biografias/${id}`)
+    this.http.delete(`${environment.apiUrl}/api/biografias/${id}`)
       .subscribe(() => this.carregar());
   }
   

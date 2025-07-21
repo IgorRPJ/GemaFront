@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment.prod';
 
 interface NoticiaResponse {
   success: boolean
@@ -43,7 +44,7 @@ export class AdminComponent {
 
   criarNoticia() {
     if (this.novaNoticia.titulo && this.novaNoticia.texto && this.novaNoticia.templateId) {
-      this.http.post<NoticiaResponse>('http://localhost:3000/noticias', this.novaNoticia).subscribe(response => {
+      this.http.post<NoticiaResponse>(`${environment.apiUrl}/noticias`, this.novaNoticia).subscribe(response => {
         console.log('Notícia criada com sucesso', response)
         const noticiaCriada = response.noticia
         this.router.navigate(['/noticia', noticiaCriada.id])
