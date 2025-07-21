@@ -13,7 +13,7 @@ export class OuvidoriaComponent {
   constructor(private location: Location) {}
 
   return(){
-    this.location.back();
+    this.location.back()
   }
   
 }

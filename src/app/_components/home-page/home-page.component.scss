@@ -1,39 +1,34 @@
 #preguica:hover a{
-    color: rgba(54, 50, 50, 0.911);
+  color: rgba(54, 50, 50, 0.911);
 }
 
-/* Estilo para o dropdown de sugestões */
 .dropdown-suggestions {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 2000; /* Certifique-se de que é maior que o do header/nav */
-    color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  
-  
-  /* Estilo para cada item da lista de sugestões */
-  .dropdown-item {
-    padding: 8px 12px;
-    cursor: pointer;
-    border-bottom: 1px solid #eee;
-  }
-  
-  /* Estilo para o hover nos itens */
-  .dropdown-item:hover {
-    background-color: #f0f0f0;
-  }
-  
-  /* Estilo opcional para o botão de pesquisa */
-  #preguica:hover a {
-    color: rgba(54, 50, 50, 0.911);
-  }
-  
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 2000;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+#preguica:hover a {
+  color: rgba(54, 50, 50, 0.911);
+}

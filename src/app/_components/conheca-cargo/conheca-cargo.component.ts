@@ -49,13 +49,13 @@ export class ConhecaCargoComponent {
   ];
 
   toggleExpand(index: number) {
-    this.membros[index].expanded = !this.membros[index].expanded;
+    this.membros[index].expanded = !this.membros[index].expanded
   }
 
   constructor(private location: Location) {}
 
   return(){
-    this.location.back();
+    this.location.back()
   }
 
 }

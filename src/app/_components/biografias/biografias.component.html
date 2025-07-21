@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <h2>Cadastrar Gremista 💙</h2>
+    <form (ngSubmit)="criarBiografia()" #form="ngForm">
+      <input class="form-control mb-2" [(ngModel)]="nova.nome" name="nome" placeholder="Nome" required>
+      <textarea class="form-control mb-2" [(ngModel)]="nova.biografia" name="biografia" placeholder="Biografia" required></textarea>
+      <input class="form-control mb-2" [(ngModel)]="nova.foto_url" name="foto_url" placeholder="Foto URL">
+      <button class="btn btn-primary" [disabled]="form.invalid">Cadastrar</button>
+    </form>
+  
+    <hr>
+  
+    <h3>Gremistas Cadastrados</h3>
+    <div *ngFor="let b of biografias" class="card mb-2">
+      <div class="card-body">
+        <h5>{{ b.nome }}</h5>
+        <p>{{ b.biografia }}</p>
+        <img *ngIf="b.foto_url" [src]="b.foto_url" class="img-fluid mb-2" style="max-width: 200px;">
+        <button class="btn btn-danger btn-sm" (click)="deletar(b.id)">Deletar</button>
+      </div>
+    </div>
+  </div>
+  

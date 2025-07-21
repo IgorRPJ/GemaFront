@@ -36,7 +36,7 @@ export class ForumComponent {
   constructor(private location: Location) {}
 
   return(){
-    this.location.back();
+    this.location.back()
   }
 
 }

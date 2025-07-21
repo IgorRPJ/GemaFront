@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NoticiaComponent implements OnInit {
 
-  noticia: any;
+  noticia: any
 
   constructor(
     private location: Location,
@@ -21,17 +21,17 @@ export class NoticiaComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      const id = parseInt(params.get('id') || '0');
+      const id = parseInt(params.get('id') || '0')
       
       this.dataService.getNoticiasFromServer().subscribe((noticias) => {
-        this.noticia = noticias.find(n => n.id === id);
-        console.log('Notícia carregada:', this.noticia);
-      });
-    });
+        this.noticia = noticias.find(n => n.id === id)
+        console.log('Notícia carregada:', this.noticia)
+      })
+    })
   }
 
   return() {
-    this.location.back();
+    this.location.back()
   }
 
 }

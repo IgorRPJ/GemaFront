@@ -39,7 +39,7 @@ export class TalentosComponent {
   constructor(private location: Location) {}
 
   return(){
-    this.location.back();
+    this.location.back()
   }
 
 }

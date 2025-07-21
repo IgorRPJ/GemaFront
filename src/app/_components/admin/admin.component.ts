@@ -31,25 +31,25 @@ export class AdminComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   onFileChange(event: any) {
-    const file = event.target.files[0];
+    const file = event.target.files[0]
     if (file) {
-      const reader = new FileReader();
+      const reader = new FileReader()
       reader.onload = () => {
-        this.novaNoticia.imagem = reader.result as string;
-      };
-      reader.readAsDataURL(file);
+        this.novaNoticia.imagem = reader.result as string
+      }
+      reader.readAsDataURL(file)
     }
   }
 
   criarNoticia() {
     if (this.novaNoticia.titulo && this.novaNoticia.texto && this.novaNoticia.templateId) {
       this.http.post<NoticiaResponse>('http://localhost:3000/noticias', this.novaNoticia).subscribe(response => {
-        console.log('Notícia criada com sucesso', response);
-        const noticiaCriada = response.noticia;
-        this.router.navigate(['/noticia', noticiaCriada.id]);
-      });
+        console.log('Notícia criada com sucesso', response)
+        const noticiaCriada = response.noticia
+        this.router.navigate(['/noticia', noticiaCriada.id])
+      })
     } else {
-      console.log('Por favor, preencha todos os campos!');
+      console.log('Por favor, preencha todos os campos!')
     }
   }
   

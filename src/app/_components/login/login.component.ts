@@ -10,25 +10,25 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  email: string = '';
-  errorMessage: string = '';
+  email: string = ''
+  errorMessage: string = ''
 
   constructor(private router: Router, private http: HttpClient) {}
 
   onSubmit() {
-    this.errorMessage = '';
+    this.errorMessage = ''
 
     this.http.post('http://localhost:3000/login', { email: this.email })
       .subscribe(
         (response: any) => {
           if (response.success) {
-            this.router.navigate(['/admin']);
+            this.router.navigate(['/admin'])
           }
         },
         (error) => {
-          this.errorMessage = 'E-mail inválido. Acesso não autorizado.';
+          this.errorMessage = 'E-mail inválido. Acesso não autorizado.'
         }
-      );
+      )
   }
 
 }

@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { DataService } from '../../data.service';
 import { Router } from '@angular/router';
 
-declare var bootstrap: any;
+declare var bootstrap: any
 
 @Component({
   selector: 'app-home-page',

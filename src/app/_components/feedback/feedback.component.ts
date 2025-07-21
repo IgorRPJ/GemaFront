@@ -12,7 +12,7 @@ export class FeedbackComponent {
   constructor(private location: Location) {}
 
   return(){
-    this.location.back();
+    this.location.back()
   }
 
 }

@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './_components/home-page/home-page.component';
 import { OuvidoriaComponent } from './_components/ouvidoria/ouvidoria.component';
 import { SobreComponent } from './_components/sobre/sobre.component';
-import { ConhecaComponent } from './_components/conheca/conheca.component';
-import { ComunicacaoComponent } from './_components/comunicacao/comunicacao.component';
 import { DocumentosComponent } from './_components/documentos/documentos.component';
 import { NoticiasComponent } from './_components/noticias/noticias.component';
 import { NoticiaComponent } from './_components/noticia/noticia.component';
@@ -17,6 +15,9 @@ import { ProfileComponent } from './_components/profile/profile.component';
 import { LoginComponent } from './_components/login/login.component';
 import { AdminComponent } from './_components/admin/admin.component';
 import { TemplateComponent } from './_components/template/template.component';
+import { GremistasComponent } from './_components/gremistas/gremistas.component';
+import { AuthGuard } from './auth.guard';
+import { BiografiasComponent } from './_components/biografias/biografias.component';
 
 
 const routes: Routes = [
@@ -24,8 +25,6 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'ouvidoria', component: OuvidoriaComponent },
   { path: 'sobre', component: SobreComponent },
-  { path: 'conheca', component: ConhecaComponent },
-  { path: 'comunicacao', component: ComunicacaoComponent },
   { path: 'documentos', component: DocumentosComponent },
   { path: 'noticias', component: NoticiasComponent },
   { path: 'noticia/:id', component: NoticiaComponent },
@@ -35,8 +34,10 @@ const routes: Routes = [
   { path: 'talentos', component: TalentosComponent },
   { path: 'conheca/cargo', component: ConhecaCargoComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: 'template/:id', component: TemplateComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
+  { path: 'gremistas', component: GremistasComponent },
+  { path: 'template/:id', component: TemplateComponent, canActivate: [AuthGuard] },
+  { path: 'admin/biografia', component: BiografiasComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

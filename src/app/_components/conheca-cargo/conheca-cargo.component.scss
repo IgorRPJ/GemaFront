@@ -1,31 +1,29 @@
 .fade-text {
-    max-height: 4.5em;
-    overflow: hidden;
-    position: relative;
-    transition: max-height 0.3s ease;
-  }
-  
-  .fade-text::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 1.5em;
-    width: 100%;
-    background: linear-gradient(to top, white, transparent);
-    pointer-events: none;
-  }
-  
-  /* Quando expandido, remove o limite e fade */
-  .fade-text.expanded {
-    max-height: none;
-  }
-  
-  .fade-text.expanded::after {
-    display: none;
-  }
-  
-  .cursor-pointer {
-    cursor: pointer;
-  }
+  max-height: 4.5em;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s ease;
+}
+
+.fade-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1.5em;
+  width: 100%;
+  background: linear-gradient(to top, white, transparent);
+  pointer-events: none;
+}
+.fade-text.expanded {
+  max-height: none;
+}
+
+.fade-text.expanded::after {
+  display: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
   

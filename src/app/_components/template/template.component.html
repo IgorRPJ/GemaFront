@@ -1,3 +1,10 @@
+<!-- Upload da Imagem -->
+<!-- <input
+    type="file"
+    (change)="onFileChange($event)"
+    class="form-control mb-3"
+  /> -->
+
 <div class="container py-5" *ngIf="templateId === 1">
   <div class="mb-4">
     <a (click)="return()" class="text-warning fw-bold" style="cursor: pointer;">
@@ -5,90 +12,107 @@
     </a>
   </div>
 
-  <input
-    [(ngModel)]="novaNoticia.titulo"
-    type="text"
-    class="fw-bold display-5 mb-3"
-    style="width: 100%; height: auto; font-size: 35px; border: none; outline: none;"
-    placeholder="Título da notícia"
-  />
+  <input [(ngModel)]="novaNoticia.titulo" type="text" class="fw-bold display-5 mb-3"
+    style="width: 100%; height: auto; font-size: 35px; border: none; outline: none;" placeholder="Título da notícia">
 
-  <!-- Upload da Imagem -->
-  <!-- <input
-    type="file"
-    (change)="onFileChange($event)"
-    class="form-control mb-3"
-  /> -->
+  <div class="img-fluid rounded shad  ow-sm mb-4 d-flex justify-content-center align-items-center position-relative"
+    style="height: 500px; width: 100%; border: 2px dashed #ccc; cursor: pointer; overflow: hidden;"
+    (click)="imagemInput1.click()">
 
+    <img *ngIf="novaNoticia.imagem" [src]="novaNoticia.imagem" alt="Imagem da notícia"
+      style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" />
 
+    <span *ngIf="!novaNoticia.imagem" class="text-muted" style="z-index: 1;">
+      Clique para selecionar a imagem da notícia
+    </span>
 
-<div
-class="img-fluid rounded shadow-sm mb-4 d-flex justify-content-center align-items-center position-relative"
-style="height: 500px; width: 100%; border: 2px dashed #ccc; cursor: pointer; overflow: hidden;"
-(click)="imagemInput.click()"
->
-
-<img
-  *ngIf="novaNoticia.imagem"
-  [src]="novaNoticia.imagem"
-  alt="Imagem da notícia"
-  style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;"
-/>
-
-<span *ngIf="!novaNoticia.imagem" class="text-muted" style="z-index: 1;">
-  Clique para selecionar a imagem da notícia
-</span>
-
-  <input
-    #imagemInput
-    type="file"
-    accept="image/*"
-    style="display: none"
-    (change)="onFileChange($event)"
-  />
+    <input #imagemInput1 type="file" accept="image/*" style="display: none" (change)="onFileChange($event, 1)" />
   </div>
 
+  <textarea [(ngModel)]="novaNoticia.texto" rows="8" class="lead w-100"
+    style="line-height: 1.8; border: none; outline: none; resize: none;"
+    placeholder="Escreva o texto da notícia aqui..."></textarea>
 
-    <textarea
-      [(ngModel)]="novaNoticia.texto"
-      rows="8"
-      class="lead w-100"
-      style="line-height: 1.8; border: none; outline: none; resize: none;"
-      placeholder="Escreva o texto da notícia aqui..."
-    ></textarea>
-
-    <button (click)="criarNoticia()" class="btn btn-warning mt-4">
-      Publicar Notícia
-    </button>
-  </div>
-
-
-    
-
-    
+  <button (click)="criarNoticia()" class="btn btn-warning mt-4">
+    Publicar Notícia
+  </button>
+</div>
 
 
 
-<div class="container py-5" *ngIf="noticia && templateId === 2">
+
+
+
+
+
+
+<div class="container py-5" *ngIf="templateId === 2">
   <div class="mb-4">
     <a (click)="return()" class="text-warning fw-bold" style="cursor: pointer;">
       <i class="bi bi-caret-left-fill"></i> Voltar
     </a>
   </div>
 
-  <h1 class="fw-bold display-5 mb-3">{{ noticia.titulo }}</h1>
+  <input [(ngModel)]="novaNoticia.titulo" type="text" class="fw-bold display-5 mb-3"
+    style="width: 100%; height: auto; font-size: 35px; border: none; outline: none;" placeholder="Título da notícia">
 
-  <img
-    [src]="noticia.imagem"
-    alt="Imagem da notícia"
-    class="img-fluid rounded shadow-sm mb-4"
-    style="max-height: 500px; object-fit: cover; width: 100%;"/>
+  <div class="container d-flex align-items-start" style="gap: 1rem;">
+    <textarea [(ngModel)]="novaNoticiaTexto1" class="lead" #autoResizeTextarea1
+      (input)="ajustarAltura(autoResizeTextarea1)" style="
+        flex: 3;
+        height: 500px;
+        line-height: 1.8;
+        border: none;
+        outline: none;
+        resize: none;
+        overflow: hidden;" placeholder="Escreva o texto da notícia aqui..."></textarea>
 
+    <div
+      style="flex: 1; position: relative; height: 500px; border: 2px dashed #ccc; cursor: pointer; overflow: hidden; border-radius: .375rem; box-shadow: .125rem .125rem .5rem rgba(0,0,0,0.1);"
+      (click)="imagemInput1.click()">
 
-  <p class="lead" style="line-height: 1.8;">
-    {{ noticia.texto }}
-  </p>
+      <img *ngIf="novaNoticiaImagem1" [src]="novaNoticiaImagem1" class="img-fluid rounded shadow-sm"
+        style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" />
+
+      <span *ngIf="!novaNoticiaImagem1" class="text-muted d-flex justify-content-center align-items-center"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; text-align: center;">
+        Clique para selecionar a imagem da notícia
+      </span>
+    </div>
+
+    <input #imagemInput1 type="file" accept="image/*" style="display: none" (change)="onFileChange($event, 1)" />
+  </div>
+
+  <div class="container d-flex align-items-start" style="gap: 1rem; margin-top: 1rem;">
+
+    <div
+      style="flex: 1; position: relative; height: 500px; border: 2px dashed #ccc; cursor: pointer; overflow: hidden; border-radius: .375rem; box-shadow: .125rem .125rem .5rem rgba(0,0,0,0.1);"
+      (click)="imagemInput2.click()">
+
+      <img *ngIf="novaNoticiaImagem2" [src]="novaNoticiaImagem2" class="img-fluid rounded shadow-sm"
+        style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" />
+
+      <span *ngIf="!novaNoticiaImagem2" class="text-muted d-flex justify-content-center align-items-center"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; text-align: center;">
+        Clique para selecionar a imagem da notícia
+      </span>
+    </div>
+
+    <textarea [(ngModel)]="novaNoticiaTexto2" class="lead" #autoResizeTextarea2
+      (input)="ajustarAltura(autoResizeTextarea2)" style="
+        flex: 3;
+        height: 500px;
+        line-height: 1.8;
+        border: none;
+        outline: none;
+        resize: none;
+        overflow: hidden;" placeholder="Escreva o texto da notícia aqui..."></textarea>
+
+    <input #imagemInput2 type="file" accept="image/*" style="display: none" (change)="onFileChange($event, 2)" />
+  </div>
 </div>
+
+
 
 
 

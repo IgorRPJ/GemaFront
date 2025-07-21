@@ -12,24 +12,23 @@ import { Router } from '@angular/router';
 })
 export class NoticiasComponent implements OnInit{
 
-  lista: any[] = [];
+  lista: any[] = []
 
   constructor(private location: Location, private dataService: DataService, private router: Router) {}
 
   ngOnInit() {
-    // Aguardar o carregamento das notícias no DataService
     this.dataService.noticias$.subscribe(data => {
-      this.lista = data;
-      console.log('Notícias recebidas:', data);
-    });
+      this.lista = data
+      console.log('Notícias recebidas:', data)
+    })
   }
 
   return() {
-    this.location.back();
+    this.location.back()
   }
 
   abrirNoticia(id: number) {
-    this.router.navigate(['/noticia', id]);
+    this.router.navigate(['/noticia', id])
   }
 
 }

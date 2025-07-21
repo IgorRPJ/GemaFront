@@ -10,10 +10,7 @@ import { HomePageComponent } from './_components/home-page/home-page.component';
 import { OuvidoriaComponent } from './_components/ouvidoria/ouvidoria.component';
 import { NoticiasComponent } from './_components/noticias/noticias.component';
 import { TalentosComponent } from './_components/talentos/talentos.component';
-import { FooterComponent } from './_components/footer/footer.component';
 import { SobreComponent } from './_components/sobre/sobre.component';
-import { ConhecaComponent } from './_components/conheca/conheca.component';
-import { ComunicacaoComponent } from './_components/comunicacao/comunicacao.component';
 import { DocumentosComponent } from './_components/documentos/documentos.component';
 import { FeedbackComponent } from './_components/feedback/feedback.component';
 import { NoticiaComponent } from './_components/noticia/noticia.component';
@@ -24,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './_components/admin/admin.component';
 import { LoginComponent } from './_components/login/login.component';
 import { TemplateComponent } from './_components/template/template.component';
+import { GremistasComponent } from './_components/gremistas/gremistas.component';
+import { BiografiasComponent } from './_components/biografias/biografias.component';
 
 
 @NgModule({
@@ -37,16 +36,15 @@ import { TemplateComponent } from './_components/template/template.component';
     TalentoComponent,
     TalentosComponent,
     SobreComponent,
-    ConhecaComponent,
-    ComunicacaoComponent,
     DocumentosComponent,
     FeedbackComponent,
     ForumComponent,
     ConhecaCargoComponent,
-    FooterComponent,
     AdminComponent,
     LoginComponent,
-    TemplateComponent
+    TemplateComponent,
+    GremistasComponent,
+    BiografiasComponent
   ],
   imports: [
     BrowserModule,
